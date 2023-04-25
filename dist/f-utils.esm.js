@@ -1,0 +1,1 @@
+var e=function(e,t){var n=new Date(e),r={M:n.getMonth()+1,d:n.getDate(),h:n.getHours(),m:n.getMinutes(),s:n.getSeconds(),S:n.getMilliseconds()};return t=t.replace(/([yMdhmsS])+/g,(function(e,t){var s=r[t];return void 0!==s?(e.length>1&&(s=(s="0"+s).substr(s.length-2)),s):"y"===t?(n.getFullYear()+"").substr(4-e.length):e}))},t={dateFormat:e};export{e as dateFormat,t as default};
