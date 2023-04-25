@@ -1,3 +1,12 @@
+interface DateMap {
+  M: number;
+  d: number;
+  h: number;
+  m: number;
+  s: number;
+  S: number;
+}
+
 /**
  * @description: 格式化日期
  * @method dateFormat
@@ -7,7 +16,7 @@
  */
 const dateFormat = (date: string | number, format: string) => {
   const dateObj = new Date(date);
-  const map: any = {
+  const map: DateMap = {
     M: dateObj.getMonth() + 1, // 月份
     d: dateObj.getDate(), // 日
     h: dateObj.getHours(), // 小时
