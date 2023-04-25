@@ -4,8 +4,6 @@ const fUtils = {
   dateFormat
 };
 
-export {
-  dateFormat
-};
+export { dateFormat };
 
 export default fUtils;

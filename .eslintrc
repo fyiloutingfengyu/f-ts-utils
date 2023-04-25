@@ -11,15 +11,20 @@
   },
   "extends": [
     "eslint-config-standard",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
-  "plugins": [],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     // 会覆盖extends中的规则
     // 语句结尾使用分号
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "prettier/prettier": "error"
+    // 不符合prettier的代码报eslint错误
   }
 }
