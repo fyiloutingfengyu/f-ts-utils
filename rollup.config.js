@@ -30,11 +30,13 @@ export default [
       {
         file: 'dist/f-utils.esm.js',
         format: 'es',
+        name: 'fUtils',
         exports: 'named'
       },
       {
         file: 'dist/f-utils.cjs.js',
         format: 'cjs',
+        name: 'fUtils',
         exports: 'named'
       }
     ]

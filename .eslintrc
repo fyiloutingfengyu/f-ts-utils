@@ -23,8 +23,8 @@
     "semi": [
       "error",
       "always"
-    ],
-    "prettier/prettier": "error"
+    ]
     // 不符合prettier的代码报eslint错误
+    // "prettier/prettier": "error"
   }
 }

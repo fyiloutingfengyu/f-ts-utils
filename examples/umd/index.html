@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>umd example</title>
+</head>
+<body>
+<script src="../../dist/f-utils.umd.js"></script>
+<script>
+  const fUtils = window.fUtils;
+  console.log(fUtils);
+  console.log(window.fUtils.dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss:SS'));
+
+  fUtils.setLocalStorage('test', '123');
+
+</script>
+</body>
+</html>
