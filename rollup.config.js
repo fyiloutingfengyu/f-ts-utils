@@ -5,6 +5,9 @@ import eslint from '@rollup/plugin-eslint';
 import { babel } from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import json from '@rollup/plugin-json';
+import { readFileSync } from 'fs';
+
+const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'));
 
 export default [
   {
@@ -22,21 +25,21 @@ export default [
     ],
     output: [
       {
-        file: 'dist/f-utils.umd.js',
+        file: packageJson.browser,
         format: 'umd',
-        name: 'fUtils', // format格式为umd的时候必须设置，将作为全部变量挂在window下
+        name: packageJson.customField.moduleName, // format格式为umd的时候必须设置，将作为全部变量挂在window下
         exports: 'named'
       },
       {
-        file: 'dist/f-utils.esm.js',
+        file: packageJson.module,
         format: 'es',
-        name: 'fUtils',
+        name: packageJson.customField.moduleName,
         exports: 'named'
       },
       {
-        file: 'dist/f-utils.cjs.js',
+        file: packageJson.main,
         format: 'cjs',
-        name: 'fUtils',
+        name: packageJson.customField.moduleName,
         exports: 'named'
       }
     ]
