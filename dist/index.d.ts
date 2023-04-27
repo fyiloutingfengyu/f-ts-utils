@@ -1,4 +1,5 @@
 declare const _default: {
+    setPageTitle: (title: string) => void;
     regExpList: {
         userName: RegExp;
         identityCard: RegExp;
@@ -38,12 +39,18 @@ declare const _default: {
             message: string;
         };
     };
-    setPageTitle: (title: string) => void;
+    inBrowser: boolean;
     getUrlParam: (name: string) => string;
     objToUrlStr: (query?: {}) => string;
     isSameValue: (valueA: any, valueB: any) => boolean;
-    isAndroid: boolean;
-    isiOS: boolean;
+    getDataType: (data: any) => string;
+    isAndroid: () => boolean;
+    isiOS: () => boolean;
+    isWeChat: () => boolean;
+    isFunction: (val: any) => boolean;
+    isBroadObject: (val: any) => boolean;
+    isPromise: (val: any) => boolean;
+    isDefined: (val: any) => boolean;
     getLocalStorage: (name: string) => string;
     setLocalStorage: (name: string, value: string) => void;
     removeLocalStorage: (name: string) => void;
@@ -52,6 +59,7 @@ declare const _default: {
 export default _default;
 export * from './date-formate';
 export * from './storage';
-export * from './system-info';
+export * from './validate';
 export * from './basic';
 export * from './regexp';
+export * from './element';

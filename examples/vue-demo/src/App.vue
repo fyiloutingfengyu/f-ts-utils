@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { dateFormat, setLocalStorage, objToUrlStr } from 'f-ts-utils';
+import { dateFormat, setLocalStorage, getDataType } from 'f-ts-utils';
 
 const nowDate = dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss:SS');
 
 setLocalStorage('vueDemoToken', 'vue123');
 
-const testQuery = {
-  name: 'f',
-  age: 18
-};
+let a = function(){};
 
-console.log(objToUrlStr(testQuery)); // name=f&age=18
+console.log('调试', getDataType(a));
 
 </script>
 

@@ -2,32 +2,11 @@
  * @description 基础工具类
  */
 
-const isBrowser = typeof window !== 'undefined';
-
 /**
- * @description: 设置页面标题
- * @method setPageTitle
- * @param {string} title - 标题内容
+ * @description 判断是否在浏览器环境下
+ * @return {boolean}
  */
-const setPageTitle = (title: string) => {
-  if (isBrowser) {
-    document.title = title;
-
-    if (/ip(hone|od|ad)/i.test(navigator.userAgent)) {
-      const iframe = document.createElement('iframe');
-
-      iframe.src = '/favicon.ico';
-      iframe.style.display = 'none';
-      iframe.onload = function () {
-        setTimeout(function () {
-          iframe.remove();
-        }, 10);
-      };
-
-      document.body.appendChild(iframe);
-    }
-  }
-};
+const inBrowser = typeof window !== 'undefined';
 
 /**
  * @description: 读取location.search中的参数值
@@ -66,17 +45,36 @@ const isSameValue = (valueA, valueB) => {
   return JSON.stringify(valueA) === JSON.stringify(valueB);
 };
 
+/**
+ * @description 获取数据类型
+ */
+const getDataType = (data) => {
+  const type = typeof data;
+
+  if (data === null) {
+    return 'null';
+  } else if (type === 'object') {
+    const typeStr = Object.prototype.toString.call(data);
+
+    return typeStr.slice(8, -1).toLowerCase();
+  }
+
+  return type;
+};
+
 
 export {
-  setPageTitle,
+  inBrowser,
   getUrlParam,
   objToUrlStr,
-  isSameValue
+  isSameValue,
+  getDataType
 };
 
 export default {
-  setPageTitle,
+  inBrowser,
   getUrlParam,
   objToUrlStr,
-  isSameValue
+  isSameValue,
+  getDataType
 };

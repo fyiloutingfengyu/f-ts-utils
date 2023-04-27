@@ -1,12 +1,14 @@
-declare const setPageTitle: (title: string) => void;
+declare const inBrowser: boolean;
 declare const getUrlParam: (name: string) => string;
 declare const objToUrlStr: (query?: {}) => string;
 declare const isSameValue: (valueA: any, valueB: any) => boolean;
-export { setPageTitle, getUrlParam, objToUrlStr, isSameValue };
+declare const getDataType: (data: any) => string;
+export { inBrowser, getUrlParam, objToUrlStr, isSameValue, getDataType };
 declare const _default: {
-    setPageTitle: (title: string) => void;
+    inBrowser: boolean;
     getUrlParam: (name: string) => string;
     objToUrlStr: (query?: {}) => string;
     isSameValue: (valueA: any, valueB: any) => boolean;
+    getDataType: (data: any) => string;
 };
 export default _default;
