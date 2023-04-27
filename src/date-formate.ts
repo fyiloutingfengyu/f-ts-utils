@@ -15,7 +15,6 @@ interface DateMap {
  * @returns {string} 格式化之后的日期字符串
  */
 const dateFormat = (date: string | number, format: string) => {
-  console.log(666);
   const dateObj = new Date(date);
   const map: DateMap = {
     M: dateObj.getMonth() + 1, // 月份
@@ -43,4 +42,7 @@ const dateFormat = (date: string | number, format: string) => {
   return format;
 };
 
-export default dateFormat;
+
+export { dateFormat };
+
+export default {dateFormat};

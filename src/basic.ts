@@ -59,8 +59,24 @@ const objToUrlStr = (query = {}) => {
   return params.join('&');
 };
 
+/**
+ * @description 判断两个引用类型的值是否相等
+ */
+const isSameValue = (valueA, valueB) => {
+  return JSON.stringify(valueA) === JSON.stringify(valueB);
+};
+
+
 export {
   setPageTitle,
   getUrlParam,
-  objToUrlStr
+  objToUrlStr,
+  isSameValue
+};
+
+export default {
+  setPageTitle,
+  getUrlParam,
+  objToUrlStr,
+  isSameValue
 };

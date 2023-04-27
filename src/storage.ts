@@ -31,3 +31,9 @@ export {
   setLocalStorage,
   removeLocalStorage
 };
+
+export default {
+  getLocalStorage,
+  setLocalStorage,
+  removeLocalStorage
+};

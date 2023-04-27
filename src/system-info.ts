@@ -21,3 +21,8 @@ export {
   isAndroid,
   isiOS
 };
+
+export default {
+  isAndroid,
+  isiOS
+};

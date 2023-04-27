@@ -1,7 +1,7 @@
 /**
  * @description: 公共正则
  */
-const regExpObj = {
+const regExpList = {
   userName: /^[\u4e00-\u9fa5]+$/, // 姓名
   identityCard: /\d{15}(\d\d[0-9xX])?/, // 身份证
   mobile: /^1\d{10}$/, // 手机号 telephone
@@ -13,37 +13,41 @@ const regExpObj = {
 
 const regExpRules = {
   nameRule: {
-    verify: regExpObj.userName,
+    verify: regExpList.userName,
     message: '请填写正确的姓名',
   },
   idCardRule: {
-    verify: regExpObj.identityCard,
+    verify: regExpList.identityCard,
     message: '请输入正确的身份证号码'
   },
   mobileRule: {
-    verify: regExpObj.mobile,
+    verify: regExpList.mobile,
     message: '请输入正确的手机号码'
   },
   telRule: {
-    verify: regExpObj.telephone,
+    verify: regExpList.telephone,
     message: '请输入正确的固定电话'
   },
   msgCodeRule: {
-    verify: regExpObj.messageCode,
+    verify: regExpList.messageCode,
     message: '请输入6位数字短信验证码'
   },
   pwdRule: {
-    verify: regExpObj.password,
+    verify: regExpList.password,
     message: '由数字、字母或符号组成8~16位，至少包含两种组合，符号包含_~!@#$%^&*?',
   },
   imgFileTypeRule: {
-    verify: regExpObj.imageFileType,
+    verify: regExpList.imageFileType,
     message: '请上传图片格式的文件'
   }
 };
 
-
 export {
-  regExpObj,
+  regExpList,
+  regExpRules
+};
+
+export default {
+  regExpList,
   regExpRules
 };
