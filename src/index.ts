@@ -4,6 +4,8 @@ import systemInfo from './validate';
 import basicObj from './basic';
 import regExpObj from './regexp';
 import elementObj from './element';
+import objectFn from './object';
+import arrayObj from './array';
 
 export default {
   ...dateFormat,
@@ -11,7 +13,9 @@ export default {
   ...systemInfo,
   ...basicObj,
   ...regExpObj,
-  ...elementObj
+  ...elementObj,
+  ...objectFn,
+  ...arrayObj
 };
 
 // 导出文件中所有非default的export
@@ -21,3 +25,6 @@ export * from './validate';
 export * from './basic';
 export * from './regexp';
 export * from './element';
+export * from './object';
+export * from './array';
+

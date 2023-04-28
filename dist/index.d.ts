@@ -1,4 +1,6 @@
 declare const _default: {
+    noRepeat: (arr: any) => unknown[];
+    deepAssign: (target: any, ...rest: any[]) => any;
     setPageTitle: (title: string) => void;
     regExpList: {
         userName: RegExp;
@@ -63,3 +65,5 @@ export * from './validate';
 export * from './basic';
 export * from './regexp';
 export * from './element';
+export * from './object';
+export * from './array';
