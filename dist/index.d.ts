@@ -48,6 +48,7 @@ declare const _default: {
     objToUrlStr: (query?: {}) => string;
     isSameValue: (valueA: any, valueB: any) => boolean;
     getDataType: (data: any) => string;
+    deepClone: (obj: any) => any;
     isAndroid: () => boolean;
     isiOS: () => boolean;
     isWeChat: () => boolean;
