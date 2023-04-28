@@ -1,0 +1,7 @@
+examples/
+src/
+.eslintrc
+.prettierrc.cjs
+babel.config.cjs
+rollup.config.js
+tsconfig.json

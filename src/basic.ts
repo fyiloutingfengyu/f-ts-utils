@@ -1,6 +1,7 @@
 /**
  * @description 基础工具类
  */
+import { isDefined, isBroadObject } from './validate';
 
 /**
  * @description 判断是否在浏览器环境下
@@ -62,13 +63,41 @@ const getDataType = (data) => {
   return type;
 };
 
+/**
+ * @description 数据深拷贝
+ * @param obj
+ */
+const deepClone = (obj) => {
+  if (!isDefined(obj)) {
+    return obj;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(item => deepClone(item));
+  }
+
+  if (isBroadObject(obj)) {
+    const result = {};
+
+    Object.keys(obj).forEach(key => {
+      result[key] = deepClone(obj[key]);
+    });
+
+    return result;
+  }
+
+  // 有定义 且 不是数组 且 不是对象 直接返回
+  return obj;
+};
+
 
 export {
   inBrowser,
   getUrlParam,
   objToUrlStr,
   isSameValue,
-  getDataType
+  getDataType,
+  deepClone
 };
 
 export default {
@@ -76,5 +105,6 @@ export default {
   getUrlParam,
   objToUrlStr,
   isSameValue,
-  getDataType
+  getDataType,
+  deepClone
 };

@@ -1,5 +1,5 @@
 {
-  "name": "f-ts-utils",
+  "name": "mf-ts-utils",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/f-utils.cjs.js",
@@ -10,6 +10,7 @@
     "dev": "rollup -c -w",
     "build": "cross-env NODE_ENV=production rollup -c"
   },
+  "files": [],
   "type": "module",
   "author": "felix",
   "license": "ISC",

@@ -1,1 +1,1 @@
-declare module 'f-ts-utils'
+declare module 'mf-ts-utils'
