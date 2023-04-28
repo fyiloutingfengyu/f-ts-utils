@@ -1,4 +1,6 @@
 declare const _default: {
+    throttle: (callback: any, time: any, immediate?: boolean) => (...args: any) => void;
+    debounce: (callback: any, time: any, immediate?: boolean) => (...args: any) => void;
     noRepeat: (arr: any) => unknown[];
     deepAssign: (target: any, ...rest: any[]) => any;
     setPageTitle: (title: string) => void;
@@ -67,3 +69,4 @@ export * from './regexp';
 export * from './element';
 export * from './object';
 export * from './array';
+export * from './optimize';

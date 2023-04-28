@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { dateFormat, setLocalStorage, deepAssign, noRepeat } from 'f-ts-utils';
+import { onMounted } from 'vue';
+import { dateFormat, setLocalStorage, deepAssign, throttle, debounce } from 'f-ts-utils';
 
 const nowDate = dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss:SS');
 
@@ -63,17 +64,33 @@ console.log('test2', deepAssign(objA, objB));
 // console.log('test1', deepAssign({}, objA, objB));
 // console.log('test3', deepAssign({}, objA, objB, objC));
 
-let testArr = [1, 2, 3, 6, 6, 7, 8];
-console.log(noRepeat(testArr));
+const test = () => {
+  console.log(2);
+};
+
+const testThrottle = throttle(test, 2000, false);
+
+onMounted(() => {
+  window.addEventListener('scroll', debounce(test, 2000));
+});
 
 </script>
 
 <template>
-  <div>
-    {{ nowDate }}
+  <div class="app-container">
+    <div>{{ nowDate }}</div>
+    <button
+      type="button"
+      @click="testThrottle"
+    >
+      throttle
+    </button>
   </div>
+
 </template>
 
 <style scoped>
-
+.app-container {
+  height: 200vh;
+}
 </style>

@@ -6,6 +6,7 @@ import regExpObj from './regexp';
 import elementObj from './element';
 import objectFn from './object';
 import arrayObj from './array';
+import optimizeFn from './optimize';
 
 export default {
   ...dateFormat,
@@ -15,7 +16,8 @@ export default {
   ...regExpObj,
   ...elementObj,
   ...objectFn,
-  ...arrayObj
+  ...arrayObj,
+  ...optimizeFn
 };
 
 // 导出文件中所有非default的export
@@ -27,4 +29,5 @@ export * from './regexp';
 export * from './element';
 export * from './object';
 export * from './array';
+export * from './optimize';
 

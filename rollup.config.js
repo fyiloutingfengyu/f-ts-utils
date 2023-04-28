@@ -23,6 +23,12 @@ export default [
       }),
       terser()
     ],
+    onwarn: function (warning) {
+      if (warning.code === 'THIS_IS_UNDEFINED') {
+        return;
+      }
+      console.error(warning.message);
+    },
     output: [
       {
         file: packageJson.browser,
