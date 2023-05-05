@@ -1,6 +1,6 @@
 {
   "name": "mf-ts-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/f-utils.cjs.js",
   "module": "./dist/f-utils.esm.js",
@@ -10,7 +10,7 @@
     "dev": "rollup -c -w",
     "build": "cross-env NODE_ENV=production rollup -c"
   },
-  "files": [],
+  "files": ["dist"],
   "type": "module",
   "author": "felix",
   "license": "ISC",
