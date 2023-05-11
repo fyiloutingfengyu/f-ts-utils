@@ -46,7 +46,7 @@ const debounce = (callback, time, immediate = false) => {
   let timer: number | null = null;
 
   return (...args: any) => {
-    if (timer) clearInterval(timer);
+    if (timer) clearTimeout(timer);
 
     if (immediate) {
       if (!timer) callback.apply(this, args);
