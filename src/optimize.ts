@@ -4,6 +4,7 @@
 
 /**
  * @description 节流函数
+ * 使用示例 throttle(test,200,true)(data),data为传递给test函数的参数，对应下面的args
  * @param callback
  * @param time
  * @param immediate
