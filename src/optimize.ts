@@ -13,7 +13,7 @@ const throttle = (callback, time, immediate = false) => {
   if (immediate) {
     let prevTime = 0;
 
-    return (...args: any) => {
+    return function (...args: any) {
       const nowTime = Date.now();
 
       if (nowTime - prevTime >= time) {
@@ -24,7 +24,7 @@ const throttle = (callback, time, immediate = false) => {
   } else {
     let timer: number | null = null;
 
-    return (...args: any) => {
+    return function (...args: any) {
       console.log(1);
       if (!timer) {
         timer = setTimeout(() => {
@@ -42,11 +42,10 @@ const throttle = (callback, time, immediate = false) => {
  * @param time
  * @param immediate
  */
-
 const debounce = (callback, time, immediate = false) => {
   let timer: number | null = null;
 
-  return (...args: any) => {
+  return function (...args: any) {
     if (timer) clearTimeout(timer);
 
     if (immediate) {
