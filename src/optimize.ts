@@ -1,6 +1,7 @@
 /**
  * @description 优化相关
  */
+import {FunctionType} from './types/common';
 
 /**
  * @description 节流函数
@@ -9,10 +10,11 @@
  * @param time
  * @param immediate
  */
-const throttle = (callback, time, immediate = false) => {
+const throttle = function (callback: FunctionType, time: number, immediate = false) {
   if (immediate) {
     let prevTime = 0;
 
+    // todo f this
     return function (...args: any) {
       const nowTime = Date.now();
 
@@ -25,7 +27,6 @@ const throttle = (callback, time, immediate = false) => {
     let timer: number | null = null;
 
     return function (...args: any) {
-      console.log(1);
       if (!timer) {
         timer = setTimeout(() => {
           callback.apply(this, args);
@@ -42,6 +43,7 @@ const throttle = (callback, time, immediate = false) => {
  * @param time
  * @param immediate
  */
+/*
 const debounce = (callback, time, immediate = false) => {
   let timer: number | null = null;
 
@@ -61,13 +63,14 @@ const debounce = (callback, time, immediate = false) => {
     }
   };
 };
+*/
 
 export {
   throttle,
-  debounce
+  // debounce
 };
 
 export default {
   throttle,
-  debounce
+  // debounce
 };

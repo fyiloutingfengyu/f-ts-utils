@@ -7,7 +7,7 @@
  * @description 数组去重
  * @param arr
  */
-const noRepeat = (arr) => {
+const noRepeat = (arr: any[]) => {
   return Array.from(new Set(arr));
 };
 

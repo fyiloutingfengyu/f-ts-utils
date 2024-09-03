@@ -4,8 +4,13 @@
     "module": "esnext",
     "declaration": true,
     "outDir": "./dist",
+    // todo f
     "strict": true,
-    "noImplicitAny": false,
+    // 允许隐式的any类型
+//    "noImplicitAny": false,
+    // todo f
+    // 允许this有隐式any类型
+    "noImplicitThis": false,
     "removeComments": true,
     "skipLibCheck": true
   },

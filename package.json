@@ -10,7 +10,9 @@
     "dev": "rollup -c -w",
     "build": "cross-env NODE_ENV=production rollup -c"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "author": "felix",
   "license": "ISC",
@@ -35,12 +37,15 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^17.10.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
-    "tslib": "^2.5.0"
+    "rollup": "^4.21.1",
+    "tslib": "^2.5.0",
+    "typescript": "5.0.2"
   },
   "customField": {
     "moduleName": "fUtils"

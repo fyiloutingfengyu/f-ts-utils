@@ -2,6 +2,7 @@
  * @description 基础工具类
  */
 import { isDefined, isBroadObject } from './validate';
+import { ObjectType } from './types/common';
 
 /**
  * @description 判断是否在浏览器环境下
@@ -29,7 +30,7 @@ const getUrlParam = (name: string) => {
 /**
  * @description 对象数据转为url参数格式
  */
-const objToUrlStr = (query = {}) => {
+const objToUrlStr = (query: ObjectType = {}) => {
   const queryKeys = Object.keys(query);
 
   if (queryKeys.length === 0) return '';
@@ -42,14 +43,14 @@ const objToUrlStr = (query = {}) => {
 /**
  * @description 判断两个引用类型的值是否相等
  */
-const isSameValue = (valueA, valueB) => {
+const isSameValue = (valueA: any, valueB: any) => {
   return JSON.stringify(valueA) === JSON.stringify(valueB);
 };
 
 /**
  * @description 获取数据类型
  */
-const getDataType = (data) => {
+const getDataType = (data: any) => {
   const type = typeof data;
 
   if (data === null) {
@@ -67,7 +68,8 @@ const getDataType = (data) => {
  * @description 数据深拷贝
  * @param obj
  */
-const deepClone = (obj) => {
+// todo f
+const deepClone = (obj: any) => {
   if (!isDefined(obj)) {
     return obj;
   }
@@ -77,7 +79,7 @@ const deepClone = (obj) => {
   }
 
   if (isBroadObject(obj)) {
-    const result = {};
+    const result: ObjectType = {};
 
     Object.keys(obj).forEach(key => {
       result[key] = deepClone(obj[key]);

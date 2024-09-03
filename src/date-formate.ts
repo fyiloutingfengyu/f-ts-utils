@@ -26,6 +26,7 @@ const dateFormat = (date: string | number, format: string) => {
   };
 
   format = format.replace(/([yMdhmsS])+/g, function (all, item) {
+    // todo f
     let val = map[item];
 
     if (val !== undefined) {
@@ -45,4 +46,4 @@ const dateFormat = (date: string | number, format: string) => {
 
 export { dateFormat };
 
-export default {dateFormat};
+export default { dateFormat };

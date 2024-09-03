@@ -9,45 +9,37 @@ import { readFileSync } from 'fs';
 
 const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'));
 
-export default [
-  {
-    input: 'src/index.ts',
-    plugins: [
-      nodeResolve(),
-      commonjs(),
-      typescript(),
-      json(),
-      eslint(),
-      babel({
-        babelHelpers: 'runtime'
-      }),
-      terser()
-    ],
-    onwarn: function (warning) {
-      if (warning.code === 'THIS_IS_UNDEFINED') {
-        return;
-      }
-      console.error(warning.message);
+export default {
+  input: 'src/index.ts',
+  output: [
+    {
+      file: packageJson.browser,
+      format: 'umd',
+      name: packageJson.customField.moduleName, // format格式为umd的时候必须设置，将作为全部变量挂在window下
+      exports: 'named'
     },
-    output: [
-      {
-        file: packageJson.browser,
-        format: 'umd',
-        name: packageJson.customField.moduleName, // format格式为umd的时候必须设置，将作为全部变量挂在window下
-        exports: 'named'
-      },
-      {
-        file: packageJson.module,
-        format: 'es',
-        name: packageJson.customField.moduleName,
-        exports: 'named'
-      },
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        name: packageJson.customField.moduleName,
-        exports: 'named'
-      }
-    ]
-  }
-];
+    {
+      file: packageJson.module,
+      format: 'es',
+      name: packageJson.customField.moduleName,
+      exports: 'named'
+    },
+    {
+      file: packageJson.main,
+      format: 'cjs',
+      name: packageJson.customField.moduleName,
+      exports: 'named'
+    }
+  ],
+  plugins: [
+    nodeResolve(),
+    commonjs(),
+    typescript(),
+    json(),
+    eslint(),
+    babel({
+      babelHelpers: 'runtime'
+    }),
+    terser()
+  ]
+};

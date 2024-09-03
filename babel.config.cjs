@@ -1,3 +1,5 @@
+// todo f
+// 1、优化babel配置； 2、将 rollup 和 typescript 使用项目本地安装的方式
 module.exports = {
   'presets': [
     [

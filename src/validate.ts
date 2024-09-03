@@ -46,7 +46,7 @@ const isWeChat = () => {
  * @description 判断是否函数
  * @return {boolean}
  */
-const isFunction = (val) => {
+const isFunction = (val: any) => {
   return typeof val === 'function';
 };
 
@@ -54,7 +54,7 @@ const isFunction = (val) => {
  * @description 判断是否Object(宽泛的Object)
  * @return {boolean}
  */
-const isBroadObject = (val) => {
+const isBroadObject = (val: any) => {
   return val !== null && typeof val === 'object';
 };
 
@@ -62,7 +62,7 @@ const isBroadObject = (val) => {
  * @description 判断是否promise
  * @return {boolean}
  */
-const isPromise = (val) => {
+const isPromise = (val: any) => {
   return isBroadObject(val) && isFunction(val.then) && isFunction(val.catch);
 };
 
@@ -70,7 +70,7 @@ const isPromise = (val) => {
  * @description 是否定义
  * @return {boolean}
  */
-const isDefined = (val) => {
+const isDefined = (val: any) => {
   return val !== undefined && val !== null;
 };
 
