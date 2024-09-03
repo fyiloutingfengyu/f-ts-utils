@@ -68,8 +68,7 @@ const getDataType = (data: any) => {
  * @description 数据深拷贝
  * @param obj
  */
-// todo f
-const deepClone = (obj: any) => {
+const deepClone = (obj: any): any => {
   if (!isDefined(obj)) {
     return obj;
   }
@@ -81,7 +80,7 @@ const deepClone = (obj: any) => {
   if (isBroadObject(obj)) {
     const result: ObjectType = {};
 
-    Object.keys(obj).forEach(key => {
+    Object.keys(obj).forEach((key: any) => {
       result[key] = deepClone(obj[key]);
     });
 

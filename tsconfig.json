@@ -4,11 +4,10 @@
     "module": "esnext",
     "declaration": true,
     "outDir": "./dist",
-    // todo f
     "strict": true,
+    "alwaysStrict": true,
     // 允许隐式的any类型
-//    "noImplicitAny": false,
-    // todo f
+    // "noImplicitAny": false,
     // 允许this有隐式any类型
     "noImplicitThis": false,
     "removeComments": true,

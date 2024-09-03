@@ -10,6 +10,7 @@ import {
 } from 'mf-ts-utils';
 
 const nowDate = dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss:SS');
+console.log(1, nowDate);
 
 setLocalStorage('vueDemoToken', 'vue123');
 
@@ -111,7 +112,7 @@ console.log('deepClone', deepClone(cloneObj));
 
 <template>
   <div class="app-container">
-    <div>{{ nowDate }}</div>
+    <!--    <div>{{ nowDate }}</div>-->
     <button
       type="button"
       @click="testThrottle"

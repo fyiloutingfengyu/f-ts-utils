@@ -1,7 +1,7 @@
 /**
  * @description 优化相关
  */
-import {FunctionType} from './types/common';
+import { FunctionType } from './types/common';
 
 /**
  * @description 节流函数
@@ -43,8 +43,7 @@ const throttle = function (callback: FunctionType, time: number, immediate = fal
  * @param time
  * @param immediate
  */
-/*
-const debounce = (callback, time, immediate = false) => {
+const debounce = (callback: FunctionType, time: number, immediate = false) => {
   let timer: number | null = null;
 
   return function (...args: any) {
@@ -63,14 +62,13 @@ const debounce = (callback, time, immediate = false) => {
     }
   };
 };
-*/
 
 export {
   throttle,
-  // debounce
+  debounce
 };
 
 export default {
   throttle,
-  // debounce
+  debounce
 };
