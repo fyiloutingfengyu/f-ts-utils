@@ -35,7 +35,7 @@ const objToUrlStr = (query: ObjectType = {}) => {
 
   if (queryKeys.length === 0) return '';
 
-  const params = queryKeys.map(key => `${key}=${query[key]}`);
+  const params = queryKeys.map((key) => `${key}=${query[key]}`);
 
   return params.join('&');
 };
@@ -74,7 +74,7 @@ const deepClone = (obj: any): any => {
   }
 
   if (Array.isArray(obj)) {
-    return obj.map(item => deepClone(item));
+    return obj.map((item) => deepClone(item));
   }
 
   if (isBroadObject(obj)) {
@@ -90,7 +90,6 @@ const deepClone = (obj: any): any => {
   // 有定义 且 不是数组 且 不是对象 直接返回
   return obj;
 };
-
 
 export {
   inBrowser,

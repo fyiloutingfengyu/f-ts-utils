@@ -14,7 +14,7 @@ const regExpList = {
 const regExpRules = {
   nameRule: {
     verify: regExpList.userName,
-    message: '请填写正确的姓名',
+    message: '请填写正确的姓名'
   },
   idCardRule: {
     verify: regExpList.identityCard,
@@ -34,7 +34,8 @@ const regExpRules = {
   },
   pwdRule: {
     verify: regExpList.password,
-    message: '由数字、字母或符号组成8~16位，至少包含两种组合，符号包含_~!@#$%^&*?',
+    message:
+      '由数字、字母或符号组成8~16位，至少包含两种组合，符号包含_~!@#$%^&*?'
   },
   imgFileTypeRule: {
     verify: regExpList.imageFileType,
@@ -42,10 +43,7 @@ const regExpRules = {
   }
 };
 
-export {
-  regExpList,
-  regExpRules
-};
+export { regExpList, regExpRules };
 
 export default {
   regExpList,

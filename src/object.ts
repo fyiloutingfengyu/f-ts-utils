@@ -4,11 +4,10 @@
 import { isDefined, isBroadObject } from './validate';
 import { ObjectType } from './types/common';
 
-
 const { hasOwnProperty } = Object.prototype;
 
 const _deepAssignFn = (to: ObjectType, from: ObjectType) => {
-  Object.keys(from).forEach(key => {
+  Object.keys(from).forEach((key) => {
     _assignKey(to, from, key);
   });
 
@@ -39,16 +38,14 @@ const deepAssign = (target: ObjectType, ...rest: ObjectType[]) => {
 
   console.log(target, rest);
 
-  rest.forEach(item => {
+  rest.forEach((item) => {
     target = _deepAssignFn(target, item);
   });
 
   return target;
 };
 
-export {
-  deepAssign
-};
+export { deepAssign };
 
 export default {
   deepAssign

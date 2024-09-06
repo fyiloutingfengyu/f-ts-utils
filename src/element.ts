@@ -29,9 +29,7 @@ const setPageTitle = (title: string) => {
   }
 };
 
-export {
-  setPageTitle
-};
+export { setPageTitle };
 
 export default {
   setPageTitle

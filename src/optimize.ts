@@ -10,11 +10,14 @@ import { FunctionType } from './types/common';
  * @param time
  * @param immediate
  */
-const throttle = function (callback: FunctionType, time: number, immediate = false) {
+const throttle = function (
+  callback: FunctionType,
+  time: number,
+  immediate = false
+) {
   if (immediate) {
     let prevTime = 0;
 
-    // todo f this
     return function (...args: any) {
       const nowTime = Date.now();
 
@@ -63,10 +66,7 @@ const debounce = (callback: FunctionType, time: number, immediate = false) => {
   };
 };
 
-export {
-  throttle,
-  debounce
-};
+export { throttle, debounce };
 
 export default {
   throttle,
