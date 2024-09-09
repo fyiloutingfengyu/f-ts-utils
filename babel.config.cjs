@@ -1,22 +1,26 @@
-// todo f
-// 1、优化babel配置； 2、将 rollup 和 typescript 使用项目本地安装的方式
 module.exports = {
-  'presets': [
+  presets: [
     [
       '@babel/preset-env',
       {
-        'modules': false,
-        'useBuiltIns': 'usage',
-        'corejs': 3,
-        'targets': '> 0.25%, not dead'
+        modules: false,
+        targets: '> 0.25%, not dead'
       },
       '@babel/preset-typescript'
     ]
   ],
   'plugins': [
-    '@babel/plugin-transform-runtime'
+    [
+      '@babel/plugin-transform-runtime',
+      {
+        corejs: 3,
+        helpers: true, // 使用从 @babel/runtime-corejs3库中导入辅助函数包来替代内联helpers
+        regenerator: true, // 将generator函数转换为使用不污染全局作用的regenerator运行时
+        useESModules: false // 是否使用ES模块语法生成的帮助函数
+      }
+    ]
   ],
-  'ignore': [
+  ignore: [
     'node_modules/**'
   ]
 };

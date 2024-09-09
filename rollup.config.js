@@ -38,6 +38,8 @@ export default {
     json(),
     eslint(),
     babel({
+      include: './src/**/*',
+      extensions: ['.js', '.ts'],
       babelHelpers: 'runtime'
     }),
     terser()

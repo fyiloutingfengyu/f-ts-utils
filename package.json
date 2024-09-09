@@ -1,6 +1,6 @@
 {
   "name": "mf-ts-utils",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "",
   "main": "./dist/f-utils.cjs.js",
   "module": "./dist/f-utils.esm.js",
@@ -8,7 +8,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "cross-env NODE_ENV=production rollup -c"
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "pub": "npm run build && npm publish"
   },
   "files": [
     "dist"
@@ -32,7 +33,6 @@
     "@rollup/plugin-typescript": "^11.1.0",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
-    "core-js": "^3.30.1",
     "cross-env": "^7.0.3",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^8.8.0",
